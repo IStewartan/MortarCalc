@@ -18,7 +18,6 @@ Point convertedTargetPosition = new Point(0, 0);
 RangeAndBearing currentSolution;
 
 Console.WriteLine("Welcome to the Mortar Calculator!");
-
 Console.WriteLine("Enter Player Position");
 
 var player = CollectionPositionData("Player");
@@ -30,7 +29,7 @@ convertedTargetPosition = ConvertPosition(target);
 
 CalculateRangeAndBearing(convertedPlayerPosition, convertedTargetPosition);
 DisplayResults();
-Console.WriteLine("\n \nList of Commands:\n P = Change PlayerPosition \n T = Change TargetPosition \n E = Exit");
+Console.WriteLine("\n \nList of Commands:\n P = Change PlayerPosition \n T = Change TargetPosition \n C = Clear Console all previous cordinates are still preserved \n E = Exit");
 while (running)
 {
     Console.WriteLine("Enter a command:");
@@ -47,6 +46,10 @@ while (running)
             break;
         case "E":
             running = false;
+            break;
+        case "C":
+            Console.Clear();
+            Console.WriteLine("\n \nList of Commands:\n P = Change PlayerPosition \n T = Change TargetPosition \n C = Clear Console all previous cordinates are still preserved \n E = Exit");
             break;
         default:
             Console.WriteLine("Invalid command. Please try again.");
